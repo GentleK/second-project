@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Homepage from './page/Homepage';
+import RockPaperScissors from './page/RockPaperScissors';
+import Weather from './page/Weather';
+import HMShopingMallProductAll from './page/HMShopingMallProductAll';
+import HMShopingMallLogin from './page/HMShopingMallLogin';
+import HMShopingMallPrivateRoute from './Route/HMShopingMallPrivateRoute';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [HMShopingMallAuthenticate, setHMShopingMallAuthenticate] = useState(false);
+      
+    return (
+      <div>
+          <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/RockPaperScissors" element={<RockPaperScissors />} />
+              <Route path="/Weather" element={<Weather />} />
+              <Route path="/HMShopingMall" element={<HMShopingMallProductAll setHMShopingMallAuthenticate={setHMShopingMallAuthenticate} HMShopingMallAuthenticate={HMShopingMallAuthenticate} />} />
+              <Route path="/HMShopingMall/login" element={<HMShopingMallLogin setHMShopingMallAuthenticate={setHMShopingMallAuthenticate} />} />
+              <Route path="/HMShopingMall/product/:id" element={<HMShopingMallPrivateRoute setHMShopingMallAuthenticate={setHMShopingMallAuthenticate} HMShopingMallAuthenticate={HMShopingMallAuthenticate} />} />
+          </Routes>
+      </div>
+    );
 }
 
 export default App;

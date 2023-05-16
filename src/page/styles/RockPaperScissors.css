@@ -1,0 +1,53 @@
+.homeButton{
+    height:30px;
+}
+
+.titleBoxDiv{
+	display: flex;
+    justify-content: space-between;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    width: 250px;
+    height: 250px;
+    border: 8px solid black;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.winBox{
+    width: 250px;
+    height: 250px;
+    border: 8px solid green;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.loseBox{
+    width: 250px;
+    height: 250px;
+    border: 8px solid red;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.item-image{
+    width: 100px;
+    height: 100px;
+}
+
+.button-image{
+    width: 30px;
+    height: 30px;
+}
+
+.game-button{
+    padding: 0px;
+    margin:5px;
+    margin-top: 10px;
+}
